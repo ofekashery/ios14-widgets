@@ -11,30 +11,20 @@ import PhotosWidget from './widgets/photos';
 const Widgets = () => {
   return (
     <div className="row">
-      <div className="screen light-theme">
-        <div className="screen-content">
-          <BatteryWidget />
-          <CalendarWidget />
-          <NotesWidget />
-          <PodcastsWidget />
-          <RemindersWidget />
-          <WeatherWidget />
-          <MapsWidget />
-          <PhotosWidget />
+      {['light', 'dark'].map((theme) => (
+        <div className={`screen ${theme}-theme`}>
+          <div className="screen-content">
+            <BatteryWidget />
+            <CalendarWidget />
+            <NotesWidget />
+            <PodcastsWidget />
+            <RemindersWidget />
+            <WeatherWidget />
+            <MapsWidget />
+            <PhotosWidget />
+          </div>
         </div>
-      </div>
-      <div className="screen dark-theme">
-        <div className="screen-content">
-          <BatteryWidget />
-          <CalendarWidget />
-          <NotesWidget />
-          <PodcastsWidget />
-          <RemindersWidget />
-          <WeatherWidget />
-          <MapsWidget />
-          <PhotosWidget />
-        </div>
-      </div>
+      ))}
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap');
         body {
